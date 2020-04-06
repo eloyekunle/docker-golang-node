@@ -1,0 +1,11 @@
+dist: xenial
+
+services:
+  - docker
+
+script:
+  - docker build -t playmice/golang-node .
+
+deploy:
+  provider: script
+  script: bash scripts/build-deploy.sh
