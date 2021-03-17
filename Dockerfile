@@ -1,4 +1,4 @@
-FROM golang:1.15
+FROM golang:latest
 
 RUN apt-get update
 RUN apt-get install -y git python jq curl
@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y nodejs
 RUN npm install gulp -g
 RUN npm install yarn -g
 
-RUN GO111MODULE=off go get -u github.com/ory/go-acc
+RUN go get -u github.com/ory/go-acc
 
 # install schemacrawler
 RUN apt-get install -y graphviz openjdk-11-jdk unzip
